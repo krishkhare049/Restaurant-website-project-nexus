@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/log_sign.css">
+    <link rel="icon" href="/assets/user.svg" sizes="64x64">
+    <title>Login | Signup Page</title>
+    <link rel="stylesheet" href="/lib/css/swiper-bundle.min.css">
+
+    <style>
+        .swiper{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="log_sign">
+
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+
+                    <div id="login_form" class="form_sec">
+                        <form action="/login" method="post">
+            
+            
+                            <div class="form_sec">
+                                <h1 style="margin: 0px; margin-top: 20px;">Log In</h1>
+                                <hr style="width: 20px;">
+            
+                                <div class="input_elem" style="margin-top: 40px;">
+                                    <img src="/assets/user.svg" alt="">
+                                    <input type="email" name="login_email" id="" placeholder="Email..." required>
+                                </div>
+            
+                                <div class="input_elem">
+                                    <img src="/assets/padlock.svg" alt="">
+                                    <input type="password" name="login_password" placeholder="Password..." required>
+                                </div>
+            
+            
+                                <div class="btn_sec">
+                                    <button type="submit" class="submit_btn">Log in</button>
+                                    <button type="button" class="disable_btn" id="change_signup">Sign Up ></button>
+                                </div>
+            
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+
+                    <div id="regist_form" class="form_sec">
+                        <form action="/create" method="post">
+            
+            
+                            <div class="form_sec">
+                                <h1 style="margin: 0px; margin-top: 20px;">Sign Up</h1>
+                                <hr style="width: 20px;">
+            
+                                <div class="input_elem" style="margin-top: 40px;">
+                                    <img src="/assets/user.svg" alt="">
+                                    <input type="text" name="full_name" id="" placeholder="Name..." required>
+                                </div>
+                                <div class="input_elem">
+                                    <img src="/assets/user.svg" alt="">
+                                    <input type="email" name="user_email" id="" placeholder="Email..." required>
+                                </div>
+            
+                                <div class="input_elem">
+                                    <img src="/assets/padlock.svg" alt="">
+                                    <input type="password" name="user_password" placeholder="Password..." required>
+                                </div>
+            
+            
+                                <div class="btn_sec">
+                                    <button type="submit" class="submit_btn">Sign Up</button>
+                                    <button type="button" class="disable_btn" id="change_login">Log in ></button>
+                                </div>
+            
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+        </div>
+
+
+
+
+
+
+        <a href="/" style="color: white; font-size: 20px; background: rgba(110, 110, 255, 0.664); padding: 5px 10px; border-radius: 10px; position: fixed; right: 20px; top: 10px;">Back to home</a>
+    </div>
+
+
+</body>
+<script src="/lib/js/swiper-bundle.min.js"></script>
+<script src="/js/index.js"></script>
+
+</html>

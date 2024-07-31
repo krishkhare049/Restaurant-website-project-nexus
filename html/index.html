@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khare Restaurant</title>
+    <link rel="icon" href="/assets/icon.png" sizes="64x64">
+
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    
+    <div class="nav">
+        <a href="/" style="text-decoration: overline;">Home</a>
+        <a href="/log_sign">Login</a>
+    </div>
+
+    <div class="header">
+        <p>Welcome to Khare Restaurant</p>
+
+        <p id="log"></p>
+    </div>
+
+    <p id="food_items_h">Food Items</p>
+    <div class="container">
+
+        <div class="food_items"><img src="/assets/item1.jpg" alt=""><p>Buy now at 2$</p></div>
+        <div class="food_items"><img src="/assets/item2.jpeg" alt=""><p>Buy now at 4$</p></div>
+        <div class="food_items"><img src="/assets/item3.jpeg" alt=""><p>Buy now at 3$</p></div>
+        <div class="food_items"><img src="/assets/item4.jpeg" alt=""><p>Buy now at 3$</p></div>
+        <div class="food_items"><img src="/assets/item5.jpeg" alt=""><p>Buy now at 3$</p></div>
+        <div class="food_items"><img src="/assets/item6.jpeg" alt=""><p>Buy now at 3$</p></div>
+        <div class="food_items"><img src="/assets/item7.jpeg" alt=""><p>Buy now at 3$</p></div>
+        <div class="food_items"><img src="/assets/item8.jpeg" alt=""><p>Buy now at 5$</p></div>
+
+    </div>
+
+    <footer>
+        <p>Contact us at 000-000-000-000</p><br>
+        <p>&#169; Copyright. All rights reserved.</p>
+    </footer>
+
+</body>
+<script>
+    let log = document.getElementById("log");
+
+    const userToken = document.cookie.jwt
+    
+    let authCheck = fetch('auth', {
+    method: 'GET',
+    headers: {
+     'Authorization': 'Bearer ' + userToken
+    }
+})
+    .then(response => response.json())
+    .then((data) => {
+        if(data.res == "User not logged"){
+            log.innerHTML = 'You are not logged. Please log in';
+        }
+        else{
+            log.innerHTML = `Welcome ${data.name}`;
+        }
+    });
+
+</script>
+</html>
